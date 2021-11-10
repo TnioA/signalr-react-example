@@ -15,7 +15,7 @@ RUN dotnet publish "MyApi.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY ./MyChat/build ./wwwroot
+COPY ./MyChat/dist ./wwwroot
 
 RUN useradd -m myappuser
 USER myappuser
