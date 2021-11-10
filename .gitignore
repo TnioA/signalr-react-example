@@ -1,0 +1,47 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+MyChat/dist
+MyChat/build
+MyChat/tmp
+MyChat/out-tsc
+# Only exists if Bazel was run
+MyChat/bazel-out
+
+# dependencies
+MyChat/node_modules
+
+# profiling files
+MyChat/chrome-profiler-events*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+MyChat/.angular/cache
+MyChat/.sass-cache
+MyChat/connect.lock
+MyChat/coverage
+MyChat/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\projects\\signalr-react-example\\MyApi\\MyApi.csproj": {}
+  },
+  "projects": {
+    "D:\\projects\\signalr-react-example\\MyApi\\MyApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\projects\\signalr-react-example\\MyApi\\MyApi.csproj",
+        "projectName": "MyApi",
+        "projectPath": "D:\\projects\\signalr-react-example\\MyApi\\MyApi.csproj",
+        "packagesPath": "C:\\Users\\Tanio\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\signalr-react-example\\MyApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tanio\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
