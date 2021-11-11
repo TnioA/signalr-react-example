@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   messageControl = new FormControl('');
   userName!: string;
-  connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:5001/chat").build();
+  connection = new signalR.HubConnectionBuilder().withUrl("https://taniochat.herokuapp.com/chat").build();
 
   constructor(public dialog: MatDialog) {
     this.openDialog();

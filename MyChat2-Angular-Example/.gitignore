@@ -1,20 +1,18 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-MyChat/build
-MyChat2-Angular-Example/dist
-MyChat2-Angular-Example/build
-MyChat2-Angular-Example/tmp
-MyChat2-Angular-Example/out-tsc
+/dist
+/tmp
+/out-tsc
 # Only exists if Bazel was run
-MyChat2-Angular-Example/bazel-out
+/bazel-out
 
 # dependencies
-MyChat/node_modules
-MyChat2-Angular-Example/node_modules
+/node_modules
 
 # profiling files
-MyChat2-Angular-Example/chrome-profiler-events*.json
+chrome-profiler-events*.json
+speed-measure-plugin*.json
 
 # IDEs and editors
 /.idea
@@ -34,11 +32,19 @@ MyChat2-Angular-Example/chrome-profiler-events*.json
 .history/*
 
 # misc
-MyChat2-Angular-Example/.angular/cache
-MyChat2-Angular-Example/.sass-cache
-MyChat2-Angular-Example/connect.lock
-MyChat2-Angular-Example/coverage
-MyChat2-Angular-Example/libpeerconnection.log
+.angular/cache
+.sass-cache
+connect.lock
+coverage
+libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
 npm-debug.log
 yarn-error.log
 testem.log

@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 COPY ["MyApi/MyApi.csproj", "MyApi/"]
 RUN dotnet restore "MyApi/MyApi.csproj"
-COPY .MyApi .MyApi
+COPY ./MyApi ./MyApi
 WORKDIR "/src/MyApi"
 RUN dotnet build "MyApi.csproj" -c Release -o /app/build
 
@@ -15,7 +15,7 @@ RUN dotnet publish "MyApi.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY ./MyChat/dist/MyChat ./wwwroot
+COPY ./MyChat/build ./wwwroot
 
 RUN useradd -m myappuser
 USER myappuser
