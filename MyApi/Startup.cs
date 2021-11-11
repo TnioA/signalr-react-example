@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using TaimeApi.Controllers;
+using MyApi.Controllers;
 
 namespace MyApi
 {
@@ -27,7 +29,7 @@ namespace MyApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IHostApplicationLifetime hostApplicationLifetime)
         {
             if (env.IsDevelopment())
             {
@@ -40,13 +42,20 @@ namespace MyApi
 
             app.UseAuthorization();
 
+            app.UseDefaultFiles();
+
             app.UseCors(options => options.AllowAnyMethod().AllowAnyHeader()
                 .SetIsOriginAllowed(origin => true).AllowCredentials());
 
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+            });
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHub<HubController>("/chat");
                 endpoints.MapControllers();
+                endpoints.MapHub<HubController>("/chat");
             });
         }
     }

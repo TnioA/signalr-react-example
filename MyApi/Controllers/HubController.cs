@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
-namespace TaimeApi.Controllers
+namespace MyApi.Controllers
 {
     public class HubController: Hub
     {
