@@ -10,22 +10,39 @@ export default class SendMessageForm extends React.Component {
         super(props);
     }
 
+    sendMessage = () => {
+        if(!this.state.message){
+            document.getElementById("comment").focus();
+            return;
+        }
+
+        this.props.sendMessage(this.state.message);
+        this.setState({message: ''});
+    }
+
     render(){
         return (
-            <Form onSubmit={e=> {
-                e.preventDefault();
-                this.props.sendMessage(this.state.message);
-                this.setState({message: ''});
-            }}>
-                 <InputGroup>
-                    <FormControl type="user" placeholder="message..."
-                        onChange={e => this.setState({message: e.target.value})} value={this.state.message} />
-                    {/* <InputGroup.Append> */}
-                        <Button variant="primary" type="submit" disabled={!this.state.message}>Send</Button>
-                    {/* </InputGroup.Append> */}
-                </InputGroup>
-
-            </Form>
+            <div className="row reply">
+                <div className="col-sm-1 col-xs-1 reply-emojis">
+                    <i className="fa fa-smile-o fa-2x"></i>
+                </div>
+                <div className="col-sm-10 col-xs-10 reply-main">
+                    <textarea 
+                        className="form-control" 
+                        rows="1" 
+                        id="comment"
+                        placeholder="message..."
+                        onChange={e => this.setState({message: e.target.value})} value={this.state.message}
+                    ></textarea>
+                </div>
+                {/* <div className="col-sm-1 col-xs-1 reply-recording">
+                <i className="fa fa-microphone fa-2x" aria-hidden="true"></i>
+                </div> */}
+                <div className="col-sm-1 col-xs-1 reply-send">
+                    {/* <Button variant="primary" type="submit" disabled={}>Send</Button> */}
+                    <i className="fa fa-send fa-2x" aria-hidden="true" onClick={this.sendMessage}></i>
+                </div>
+            </div>
         );
     }
 }

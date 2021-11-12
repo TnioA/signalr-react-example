@@ -2,15 +2,15 @@ import React from 'react';
 import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 import Lobby from './components/Lobby';
 import Chat from './components/Chat';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends React.Component {
 
   state = {
     connection: undefined,
     messages: [],
-    users: []
+    users: [],
+    user: undefined,
+    room: undefined,
   }
 
   constructor(props){
@@ -38,7 +38,7 @@ export default class App extends React.Component {
 
         await connection.start();
         await connection.invoke("JoinRoom", {user, room})
-        this.setState({connection: connection});
+        this.setState({connection: connection, user: user, room: room});
     } catch(e){
       console.log(e);
     }
@@ -63,12 +63,11 @@ export default class App extends React.Component {
   render(){
     return (
       <div className="app">
-        <h2>MyChat</h2>
-        <hr className="line" />
         {!this.state.connection
         ? <Lobby joinRoom={this.joinRoom}></Lobby>
         : <Chat sendMessage={this.sendMessage} messages={this.state.messages} 
-            closeConnection={this.closeConnection} users={this.state.users}></Chat>}
+            closeConnection={this.closeConnection} users={this.state.users} 
+              user={this.state.user} room={this.state.room}></Chat>}
         
       </div>
     );
