@@ -2,7 +2,7 @@
 
 Com o docker file devidamente criado só nos resta a seguir os próximos passos
 
-1- Gerar imagem docker utilizando o comando docker 'build nome-da-imagem:1.0 .' na raiz do repositório
+1- Gerar imagem docker utilizando o comando 'docker build -t nome-da-imagem:1.0 .' na raiz do repositório
 
 2- Com a imagem gerada é só subir no servidor.
 
