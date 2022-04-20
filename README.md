@@ -1,4 +1,4 @@
-# signalr-react-example
+# SignalrReactHerokuDeploy
 
 Com o docker file devidamente criado só nos resta a seguir os próximos passos
 
