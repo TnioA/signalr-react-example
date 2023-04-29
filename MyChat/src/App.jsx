@@ -20,7 +20,7 @@ export default class App extends React.Component {
   joinRoom = async (user, room) => {
     try{
       const connection = new HubConnectionBuilder()
-        .withUrl("https://taniochat.herokuapp.com/chat")
+        .withUrl("/chat")
         .configureLogging(LogLevel.Information)
         .build();
 
